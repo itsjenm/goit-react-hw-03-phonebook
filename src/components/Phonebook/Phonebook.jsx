@@ -22,7 +22,6 @@ export default function Phonebook(props) {
     setUserData({
         ...userData, [name]: value
     })
-    
   }
 
 
@@ -42,11 +41,12 @@ export default function Phonebook(props) {
     if(isThere === false) {
       props.addUser(userData)
     }
+    setUserData({
+      ...userData, name : "", number : ""
+    })
   }
 
  
-  
-
   return (
     <form className={styled.phonebook_form} onSubmit={submitHandler}>
       <div className={styled.phonebook_container}>
